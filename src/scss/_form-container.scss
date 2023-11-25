@@ -1,0 +1,21 @@
+div.#{$classPrefix}-form-container{
+    padding: 7px;
+    background: #ffffff;
+    border-bottom-right-radius: $modalRadius;
+    border-left: 1px solid $defaultBorderColor;
+    height: 99%;
+}
+div.#{$classPrefix}-form-container form{
+    display: block;
+}
+div.#{$classPrefix}-form-wrapper{
+    height: inherit;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5px;
+}
+div.#{$classPrefix}-generic-control-container{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 3px;
+}

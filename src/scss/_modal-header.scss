@@ -1,0 +1,23 @@
+span.#{$classPrefix}-modal-header__close-modal{
+    color: #000000;
+    float: right;
+    font-size: 38px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+div.#{$classPrefix}-modal-header{
+    padding-left: 16px;
+    padding-right: 16px;
+    height: $headerHeight;
+    background-color: #ffffff;
+    color: #1e1e21;
+    overflow-y: hidden;
+    border-top-left-radius: $modalRadius;
+    border-top-right-radius: $modalRadius;
+    border-bottom: 1px solid $defaultBorderColor;
+}
+div.#{$classPrefix}-modal-header > h3{
+    text-align: center;
+    margin-top: 15px;
+}

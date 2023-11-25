@@ -1,0 +1,9 @@
+@import "./viewer-container";
+@import "./form-container";
+
+div.#{$classPrefix}-modal-body{
+    display: flex;
+    height: calc(100% - $headerHeight);
+    overflow-x: auto;
+    overflow-y: hidden;
+}

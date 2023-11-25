@@ -1,0 +1,27 @@
+@import "./modal-header";
+@import "./modal-body";
+
+div.#{$classPrefix}-modal-content{
+    position: relative;
+    background-color: $modalBackgroundColor;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: calc(100% - 100px);
+    height: calc(100% - 80px);
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: $modalRadius;
+    border-bottom: 5px solid $modalBackgroundColor;
+}
+@-webkit-keyframes animatetop{
+    from {top: -300px; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+@keyframes animatetop{
+    from {top: -300px; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}

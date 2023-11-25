@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Visor de reportes</title>
+    </head>
+    <body>
+        <script src="/dist/js/pdf-report-modal.js"></script>
+        <link rel="stylesheet" href="/dist/css/pdf-report-modal.min.css"/>
+        <input type="button" value="Open Report" onclick="openReport()">
+        <div id="modalContainer"></div>
+        <script>
+            const myVisor = new PdfReportModal("modalContainer", {
+                modal: {
+                    modalTitle: "Documento de ejemplo"
+                },
+                document: {
+                    documentUrl: "http://127.0.0.1:5500/demo.pdf", // Place a demo.pdf file in root folder
+                    pdfWorkerPath: "../dist/js/pdf.worker.min.js",
+                }
+            });
+            function openReport(){
+                myVisor.openModal();
+                myVisor.renderDocument();
+            }
+        </script>
+    </body>
+</html>

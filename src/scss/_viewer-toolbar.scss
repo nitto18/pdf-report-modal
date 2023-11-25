@@ -1,0 +1,23 @@
+div.#{$classPrefix}-viewer-toolbar{
+    background-color: #ffffff;
+    height: $toolbarHeight;
+    box-sizing: border-box;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $defaultBorderColor;
+}
+div.#{$classPrefix}-viewer-toolbar > div, div.#{$classPrefix}-viewer-toolbar > a{
+    padding-left: 25px;
+}
+div.#{$classPrefix}-pdf-pager input[type="number"]{
+    max-width: 50px;
+    line-height: 1.8;
+    border:  rgb(60, 60, 63) 1px solid;
+}
+div.#{$classPrefix}-viewer-toolbar span{
+    line-height: 1.8;
+}
+div.#{$classPrefix}-tooblar-control-container > div{
+    flex: 1;
+}

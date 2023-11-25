@@ -1,0 +1,42 @@
+div.#{$classPrefix}-document-container{
+    height: calc(100% - $toolbarHeight);
+    overflow: auto;
+    box-sizing: border-box;
+}
+div.#{$classPrefix}-scroll-document-container{
+    background: #adf5ab;
+    height: calc(100% - $toolbarHeight);
+    width: 12px;
+    float: right;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    visibility: hidden;
+}
+div.#{$classPrefix}-scroll-document-container > div{
+    width: 2px; 
+    background: #0a7938;
+    margin-bottom: 5px;
+}
+div.#{$classPrefix}-render-container{
+    position: relative;
+    margin: 0 auto;
+    width: min-content;
+}
+div.#{$classPrefix}-pdf-text-layer{
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    opacity: 0.25;
+    line-height: 1.0;
+}
+div.#{$classPrefix}-pdf-text-layer::selection{
+    background: #4A5D9C;
+}
+div.#{$classPrefix}-pdf-text-layer > span{
+    color: transparent;
+    position: absolute;
+    white-space: pre;
+    cursor: text;
+    transform-origin: 0% 0%;
+}

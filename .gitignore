@@ -1,0 +1,15 @@
+# Logs
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Editor
+.vscode
+.vscode-test
+
+# Other
+demo.pdf
