@@ -1,6 +1,6 @@
 {
   "name": "pdf-report-modal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PDF report viewer for websites.",
   "main": "dist/js/pdf-report-modal.js",
   "scripts": {
