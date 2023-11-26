@@ -1,4 +1,5 @@
 "use strict";
+
 const CONS = require("../constants.js");
 const REEFJS = require("reefjs");
 

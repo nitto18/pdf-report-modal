@@ -1,4 +1,5 @@
 "use strict";
+
 const CONS = require("./constants.js");
 import * as PDFJS from "pdfjs-dist";
 import Header from "./components/header.js";
@@ -22,7 +23,8 @@ export class PdfReportModal{
             finalDownloadUrl: "javascript:;",
             currentPageNumPdf: 1,
             totalPagesCountPdf: 0,
-            documentScale: this.getInitialPdfScale()
+            documentScale: this.getInitialPdfScale(),
+            anchorDownload: ""
         };
         let divModal = document.getElementById(idDiv);
         if(divModal.PdfReportModal){
@@ -38,10 +40,11 @@ export class PdfReportModal{
         const toolbarStore = {
             currentPageNumPdf: proxyObj.currentPageNumPdf,
             totalPagesCountPdf: proxyObj.totalPagesCountPdf,
-            showPrintButton: proxyObj.settings.toolbar.showPrintButton,
-            showDownloadButton: proxyObj.settings.toolbar.showDownloadButton,
             finalDownloadUrl: proxyObj.finalDownloadUrl,
             documentScale: proxyObj.documentScale,
+            anchorDownload: proxyObj.anchorDownload,
+            showPrintButton: proxyObj.settings.toolbar.showPrintButton,
+            showDownloadButton: proxyObj.settings.toolbar.showDownloadButton,
             renderAllPdf: proxyObj.settings.document.renderAllPdf,
             zoomInToolTip: proxyObj.settings.localization.toolbar.zoomInToolTip,
             zoomOutToolTip: proxyObj.settings.localization.toolbar.zoomOutToolTip,
@@ -177,6 +180,7 @@ export class PdfReportModal{
                 detail: successEvtObj,
                 bubbles: true
             }));
+            this.vars.anchorDownload = this.generateAnchorDownload(response.headers.get("Content-Disposition"));
             const arrayBuffer = await response.arrayBuffer();
             return arrayBuffer;
         }
@@ -517,6 +521,17 @@ export class PdfReportModal{
             }
         }
         return scale;
+    }
+    generateAnchorDownload(cdHeader){
+        let anchorDownload = "";
+        if(this.vars.settings.document.documentCache === true && cdHeader){
+            let cdParts = cdHeader.split(";");
+            if(cdParts.length > 0){
+                let nameParts = cdParts[1].split("=");
+                anchorDownload = nameParts.length > 0 ? `download="${nameParts[1].replaceAll("\"", "")}"` : "";
+            }
+        }
+        return anchorDownload;
     }
     // #endregion
 }

@@ -1,4 +1,5 @@
 "use strict";
+
 const CONS = require("../constants.js");
 const REEFJS = require("reefjs");
 import DownloadIcon from "../../assets/download.svg";
@@ -23,7 +24,7 @@ export default class Toolbar{
         if(this.store.showDownloadButton === true){
             docDownloader = `
             <div class="${CONS.classPrefix}-tooltip ${CONS.classPrefix}-tooltip--bottom">
-                <a href="${this.store.finalDownloadUrl}" target="_blank"><img width="${CONS.btnSize}" height="${CONS.btnSize}" src="${DownloadIcon}"/></a>
+                <a href="${this.store.finalDownloadUrl}" target="_blank" ${this.store.anchorDownload}><img width="${CONS.btnSize}" height="${CONS.btnSize}" src="${DownloadIcon}"/></a>
                 <span class="${CONS.classPrefix}-tooltip-text">${this.store.downloadToolTip}</span>
             </div>`
         }

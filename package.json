@@ -2,12 +2,13 @@
   "name": "pdf-report-modal",
   "version": "1.0.0",
   "description": "PDF report viewer for websites.",
-  "main": "index.js",
+  "main": "dist/js/pdf-report-modal.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch --mode development",
     "build-dev": "webpack --mode development",
-    "build-prod": "webpack --mode production"
+    "build-prod": "webpack --mode production",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "css-loader": "^6.8.1",
     "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^9.0.0",
+    "release-it": "^17.0.0",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",

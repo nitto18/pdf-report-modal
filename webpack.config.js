@@ -10,13 +10,13 @@ module.exports = (env, argv) => {
         entry: "./src/js/index.js",
         output: {
             path: path.resolve(__dirname, "./dist/js"),
-            filename: argv.mode === "production" ? "pdf-report-modal.min.js" : "pdf-report-modal.js",
+            filename: "pdf-report-modal.js",
             libraryTarget: "umd",
             globalObject: "this",
             assetModuleFilename: "../assets/[hash][ext][query]"
         },
         optimization: {
-            minimize: true,
+            minimize: false,
             minimizer: [new TerserPlugin()]
         },
         module: {
@@ -47,7 +47,7 @@ module.exports = (env, argv) => {
         },
         plugins: [
             new MiniCssExtractPlugin({
-                filename: "../css/pdf-report-modal.min.css",
+                filename: "../css/pdf-report-modal.css",
             }),
             new CopyPlugin({
                 patterns: [
